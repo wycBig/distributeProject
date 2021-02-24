@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: microservice-provider
+  datasource:
+    url: jdbc:mysql://8.131.103.29:3306/wyc_dev?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 0711Ch!@#
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--<parent>
+        <artifactId>microservice</artifactId>
+        <groupId>org.wyc</groupId>
+        <version>2.0.3.RELEASE</version>
+    </parent>-->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>microservice-common</artifactId>
+    <packaging>pom</packaging>
+    <groupId>org.wyc</groupId>
+    <version>2.0.3.RELEASE</version>
+    <name>microservice-common</name>
+    <url>https://www.huatonghuhui.com</url>
+    <description>泰山-快速出单系统-通用common配置-POM</description>
+
+    <properties>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <spring.web.version>2.2.1.RELEASE</spring.web.version>
+        <spring.dubbo>2.7.6</spring.dubbo>
+        <spring.nacos>2.1.1.RELEASE</spring.nacos>
+        <sprint.dubbo.cloud>2.2.1.RELEASE</sprint.dubbo.cloud>
+        <lombok.version>1.18.10</lombok.version>
+        <spring.boot.version>5.2.1.RELEASE</spring.boot.version>
+        <mysql.connector.version>8.0.16</mysql.connector.version>
+        <provider.vedrsion>2.0.3.RELEASE</provider.vedrsion>
+    </properties>
+
+    <!-- 当前Module需要用到的依赖，按自己需求添加，版本号在父类已经定义了，这里不需要再次定义 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.wyc</groupId>
+                <artifactId>microservic-provider</artifactId>
+                <version>${provider.vedrsion}</version>
+            </dependency>
+            <!--mysql 驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <!-- spring版本管理-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.web.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- boot web管理，并去除原有包，而是引用undertow容器-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.web.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${spring.dubbo}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${spring.nacos}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-dubbo</artifactId>
+                <version>${sprint.dubbo.cloud}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring.nacos}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

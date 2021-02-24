@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microservice-consumer" />
+        <module name="micorservice-auth" />
+        <module name="microservic-provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="micorservice-auth" target="1.5" />
+      <module name="microservic-provider" target="8" />
+      <module name="microservice" target="1.5" />
+      <module name="microservice-common" target="1.5" />
+      <module name="microservice-consumer" target="6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
